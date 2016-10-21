@@ -26,9 +26,7 @@ namespace ConsoleAppCYOA
         public virtual void GetShoot()
         {
             {
-            string choice = Console.ReadLine().ToUpper();
-                while (choice != "")
-                {
+                string choice = Console.ReadLine().ToUpper();
 
                     switch (choice)
                     {
@@ -48,7 +46,7 @@ namespace ConsoleAppCYOA
                             shoot = spock;
                             break;
                     }
-                }
+                
             }
         }
     }

@@ -157,30 +157,55 @@ namespace ConsoleAppCYOA
             }
             return -1;
         }
-        //public void GetShoot()
-        //{
-        //    string choice = Console.ReadLine().ToUpper();
-        //    switch (choice)
-        //    {
-        //        case "ROCK":
-        //            shoot = rock;
-        //            break;
-        //        case "PAPER":
-        //            shoot = paper;
-        //            break;
-        //        case "SCISSORS":
-        //            shoot = scissors;
-        //            break;
-        //        case "LIZARD":
-        //            shoot = lizard;
-        //            break;
-        //        case "SPOCK":
-        //            shoot = spock;
-        //            break;
-        //    }
-        //    DetermineWinner();
-
-        //}
+        public void ShowShoots()
+        {
+            if (player.shoot==0 && playerTwo.shoot==0)
+            {
+                Console.WriteLine("{0}'s rock smashes against {0}'s rock to no avail!", player.name, playerTwo.name);
+                DetermineWinner();
+            }
+            else if (player.shoot==0 && playerTwo.shoot==1)
+            {
+                Console.WriteLine("{0}'s rock is totally enveloped by {1}'s paper!", player.name, playerTwo.name);
+                DetermineWinner();
+            }
+            else if (player.shoot==0 && playerTwo.shoot==2)
+            {
+                Console.WriteLine("The scissors of {0} are brutally smashed by {1}'s rock!", playerTwo.name, player.name);
+                DetermineWinner();
+            }
+            else if (player.shoot==0 && playerTwo.shoot==3)
+            {
+                Console.WriteLine("{0}'s rock is disintegrated by Spock's phaser!");
+                DetermineWinner();
+            }
+            else if (player.shoot==0 && playerTwo.shoot == 4)
+            {
+                Console.WriteLine("{0}'s lizard is reduced to a gory red stain by {1}'s rock!", playerTwo.name, player.name);
+                DetermineWinner();
+            }
+            else if (player.shoot==1 && playerTwo.shoot == 1)
+            {
+                Console.WriteLine("Two pieces of paper stare at eachother, motionless, what feels like an eternity passes in the span of a second.");
+                System.Threading.Thread.Sleep(1000);
+                DetermineWinner();
+            }
+            else if (player.shoot==1 && playerTwo.shoot == 2)
+            {
+                Console.WriteLine("{0} looks away in despair as {1} goes snippity snap with a pair of scissors", player.name, playerTwo.name);
+                DetermineWinner();
+            }
+            else if (player.shoot==1 && playerTwo.shoot == 3)
+            {
+                Console.WriteLine("Spock's corporeal form begins to disolve after having been disproved by the rational paper.");
+                DetermineWinner();
+            }
+            else if (player.shoot==1 && playerTwo.shoot == 4)
+            {
+                Console.WriteLine("Paper is devoured by lizard.");
+                DetermineWinner();
+            }
+        }
         public void DetermineWinner()
         {
             int winner = (5 + player.shoot - playerTwo.shoot) % 5;
